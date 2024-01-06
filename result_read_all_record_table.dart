@@ -89,18 +89,21 @@ class _MyWidgetState extends State<MyWidget> {
               return TableRow(children: [
 
 
+                TableCell(
+                    child: Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => HelpPage(
+                                        student_id1: dataModel.student_id1),
+                                  ));
+                            },
+                            child: Text(dataModel.student_id1)))),
 
-                InkWell(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => HelpPage(
-                      student_id1: dataModel.student_id1
-                    ),));
-                  },
-                  child: TableCell(
-                      child: Padding(
-                          padding: const EdgeInsets.all(5),
-                          child: Text(dataModel.student_id1))),
-                ),
+
 
                 TableCell(
                     child: Padding(
